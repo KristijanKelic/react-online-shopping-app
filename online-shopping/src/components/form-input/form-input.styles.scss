@@ -4,7 +4,7 @@ $main-color: white;
 @mixin shrinkLabel {
   top: -14px;
   font-size: 12px;
-  color: $main-color;
+  color: #5fa9ee;
 }
 
 .group {
@@ -26,6 +26,7 @@ $main-color: white;
 
     &:focus {
       outline: none;
+      border-bottom: 1px solid #5fa9ee;
     }
 
     &:focus ~ .form-input-label {
