@@ -13,3 +13,7 @@ a {
 img {
   filter: grayscale(20%);
 }
+
+* {
+  box-sizing: border-box;
+}
