@@ -2,9 +2,9 @@
 
 React practice
 
-## Firebase (https://firebase.google.com/)
+## Firebase (<https://firebase.google.com/)>
 
-I used firebase to establish google auth and some storage.
+I used firebase to establish google auth and storing users to firestore.
 To make it work you will need to provide your config object.
 
 Inside src/firebase/ create firebase.config.js file and export an object that looks like:
