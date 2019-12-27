@@ -21,4 +21,26 @@
   button {
     margin-top: auto;
   }
+
+  .empty-message {
+    text-align: center;
+    font-size: 25px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+    position: absolute;
+    right: 30px;
+    top: -20px;
+  }
 }
