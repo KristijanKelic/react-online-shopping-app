@@ -23,7 +23,6 @@ export class SignIn extends React.Component {
     const { email, password } = this.state;
 
     try {
-      console.log('uslo');
       await auth.signInWithEmailAndPassword(email, password);
       this.setState({
         email: '',
