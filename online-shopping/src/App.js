@@ -8,7 +8,7 @@ import './App.css';
 import HomePage from './pages/homepage/home.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
-import SignInAndUpPage from './pages/sign-in-up-page/sign-in-up-page.component';
+import SignInAndUpPage from './pages/sign-in-up/sign-in-up.component';
 import Checkout from './pages/checkout/checkout.component';
 
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
