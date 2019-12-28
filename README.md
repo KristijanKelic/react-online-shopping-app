@@ -1,6 +1,14 @@
 # OnlineShoppingApp
 
-React practice
+React practice.
+
+Also review of:
+
+- firebase
+- react-router-dom
+- redux/redux-logger/react-redux
+- reselect
+- redux-presist
 
 ## Firebase (<https://firebase.google.com/)>
 
