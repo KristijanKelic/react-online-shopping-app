@@ -13,3 +13,20 @@ export const addItemToCartUtil = (cartItems, cartItemToAdd) => {
 
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
+
+// Removes item from cart no matter what quantity is
+export const clearItemFromCartUtil = (cartItems, cartItemToClear) => {
+  return cartItems.filter(item => item.id !== cartItemToClear.id);
+};
+
+// Reduces quantity on item
+export const removeItemFromCartUtil = (cartItems, cartItemToRemove) => {
+  if (cartItemToRemove.quantity === 1)
+    return clearItemFromCartUtil(cartItems, cartItemToRemove);
+
+  return cartItems.map(item =>
+    item.id === cartItemToRemove.id
+      ? { ...item, quantity: item.quantity - 1 }
+      : item
+  );
+};
