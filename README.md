@@ -9,6 +9,7 @@ Also review of:
 - redux/redux-logger/react-redux
 - reselect
 - redux-presist
+- CSS in JS (styled-components)
 
 ## Firebase (<https://firebase.google.com/)>
 
