@@ -33,9 +33,13 @@ const config = {
 export default config;
 ```
 
-```
+## Stripe (<https://stripe.com/gb)>
+
+I used stripe to fake online payment (test mode)
+
 Inside src/components/stripe-button make sure you use your own stripe public key:
 
+```
 const publishableKey = 'pk_test_mmfEVYMZ6pXcFNXmDxS5GMAx00OYdFOuZn';
 ```
 
