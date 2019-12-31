@@ -11,16 +11,24 @@ import Header from './components/header/header.component';
 import SignInAndUpPage from './pages/sign-in-up/sign-in-up.component';
 import Checkout from './pages/checkout/checkout.component';
 
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import {
+  auth,
+  createUserProfileDocument
+  // addCollectionAndDocuments
+} from './firebase/firebase.utils';
 
 import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
+// import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 
+// NOTE: Code that is commented here is to store collections data to firebase
+// Because there is no updating actions on those items there is no need to run this code on every app startup
+// To see data from your firebase uncomment the code run it and then comment again
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser /*collectionsArray*/ } = this.props;
 
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -33,6 +41,10 @@ class App extends React.Component {
         });
       } else {
         setCurrentUser(userAuth);
+        /* addCollectionAndDocuments(
+          'collections',
+          collectionsArray.map(({ title, items }) => ({ title, items }))
+        ); */
       }
     });
   }
@@ -64,6 +76,7 @@ class App extends React.Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
+  // collectionsArray: selectCollectionsForPreview
 });
 
 const mapDispatchToProps = dispatch => ({
