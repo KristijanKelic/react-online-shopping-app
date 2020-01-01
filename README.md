@@ -8,8 +8,9 @@ Also review of:
 - react-router-dom
 - redux/redux-logger/react-redux
 - reselect
-- redux-presist
-- CSS in JS (styled-components)
+- redux-persist
+- styled-components (CSS in JS)
+- redux-thunk (async redux)
 
 ## Firebase (<https://firebase.google.com/)>
 
