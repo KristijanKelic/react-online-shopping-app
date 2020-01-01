@@ -1,9 +1,11 @@
-import SHOP_DATA from './shop.data';
+// import SHOP_DATA from './shop.data';
 
 import ShopActionTypes from './shop.types';
 
+// SHOP_DATA is not necessary because data is retrieved from firebase
+// Unless you didn't do that uncomment in App.js
 const INITIAL_STATE = {
-  collections: SHOP_DATA
+  collections: null // SHOP_DATA (replace with null)
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
