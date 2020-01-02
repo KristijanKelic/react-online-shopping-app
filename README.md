@@ -11,6 +11,7 @@ Also review of:
 - redux-persist
 - styled-components (CSS in JS)
 - redux-thunk (async redux)
+- redux-saga (async redux, replace for thunk)
 
 ## Firebase (<https://firebase.google.com/)>
 
