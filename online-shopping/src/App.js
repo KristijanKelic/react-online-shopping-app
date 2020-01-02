@@ -13,7 +13,6 @@ import Checkout from './pages/checkout/checkout.component';
 
 // import { addCollectionAndDocuments } from './firebase/firebase.utils';
 
-import { setCurrentUser } from './redux/user/user.actions';
 import { selectCurrentUser } from './redux/user/user.selector';
 // import { selectCollectionsForPreview } from './redux/shop/shop.selectors';
 
@@ -21,17 +20,11 @@ import { selectCurrentUser } from './redux/user/user.selector';
 // Because there is no updating actions on those items there is no need to run this code on every app startup
 // To see data from your firebase uncomment the code run it and then comment again
 class App extends React.Component {
-  unsubscribeFromAuth = null;
-
   componentDidMount() {
     /* addCollectionAndDocuments(
           'collections',
           collectionsArray.map(({ title, items }) => ({ title, items }))
         ); */
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
   }
 
   render() {
@@ -60,8 +53,4 @@ const mapStateToProps = createStructuredSelector({
   // collectionsArray: selectCollectionsForPreview
 });
 
-const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
