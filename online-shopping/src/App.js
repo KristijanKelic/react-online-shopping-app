@@ -11,6 +11,8 @@ import Header from './components/header/header.component';
 import SignInAndUpPage from './pages/sign-in-up/sign-in-up.component';
 import Checkout from './pages/checkout/checkout.component';
 
+import { checkUserSession } from './redux/user/user.actions';
+
 // import { addCollectionAndDocuments } from './firebase/firebase.utils';
 
 import { selectCurrentUser } from './redux/user/user.selector';
@@ -21,6 +23,8 @@ import { selectCurrentUser } from './redux/user/user.selector';
 // To see data from your firebase uncomment the code run it and then comment again
 class App extends React.Component {
   componentDidMount() {
+    const { checkUserSession } = this.props;
+    checkUserSession();
     /* addCollectionAndDocuments(
           'collections',
           collectionsArray.map(({ title, items }) => ({ title, items }))
@@ -53,4 +57,8 @@ const mapStateToProps = createStructuredSelector({
   // collectionsArray: selectCollectionsForPreview
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  checkUserSession: () => dispatch(checkUserSession())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
