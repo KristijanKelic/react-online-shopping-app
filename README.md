@@ -12,6 +12,7 @@ Also review of:
 - styled-components (CSS in JS)
 - redux-thunk (async redux)
 - redux-saga (async redux, replace for thunk)
+- React Hooks
 
 ## Firebase (<https://firebase.google.com/)>
 
