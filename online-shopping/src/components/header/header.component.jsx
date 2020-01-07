@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -9,9 +9,9 @@ import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 import { selectCurrentUser } from '../../redux/user/user.selector';
 
-import CartContext from '../../contexts/cart/cart.context';
-
 import { signOutStart } from '../../redux/user/user.actions';
+
+import { CartContext } from '../../providers/cart/cart.provider';
 
 import {
   HeaderContainer,
@@ -21,9 +21,7 @@ import {
 } from './header.styles';
 
 const Header = ({ currentUser, signOutStart }) => {
-  const [hidden, setHidden] = useState(true);
-  const toggleHidden = () => setHidden(!hidden);
-
+  const { hidden } = useContext(CartContext);
   return (
     <HeaderContainer>
       <LogoContainer to="/">
@@ -39,15 +37,9 @@ const Header = ({ currentUser, signOutStart }) => {
         ) : (
           <LinkOption to="/signin">SIGN IN</LinkOption>
         )}
-        <CartContext.Provider value={{ hidden, toggleHidden }}>
-          <CartIcon />
-        </CartContext.Provider>
+        <CartIcon />
       </LinksContainer>
-      {hidden ? null : (
-        <CartContext.Provider value={{ hidden, toggleHidden }}>
-          <CartDropdown />
-        </CartContext.Provider>
-      )}
+      {hidden ? null : <CartDropdown />}
     </HeaderContainer>
   );
 };
