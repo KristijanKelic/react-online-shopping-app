@@ -13,6 +13,7 @@ Also review of:
 - redux-thunk (async redux)
 - redux-saga (async redux, replace for thunk)
 - React Hooks
+- Context API
 
 ## Firebase (<https://firebase.google.com/)>
 
