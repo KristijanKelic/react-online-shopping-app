@@ -14,8 +14,6 @@ import ShopActionTypes from './shop.types';
 
 // Generator for takeEvery second parameter for FETCH_COLLECTIONS_START
 export function* fetchCollectionsAsync() {
-  yield console.log('I am fired');
-
   try {
     const collectionRef = firestore.collection('collections');
     const snapshot = yield collectionRef.get();

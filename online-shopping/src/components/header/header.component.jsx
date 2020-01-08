@@ -16,8 +16,8 @@ import { CartContext } from '../../providers/cart/cart.provider';
 import {
   HeaderContainer,
   LogoContainer,
-  LinksContainer,
-  LinkOption
+  OptionsContainer,
+  OptionLink
 } from './header.styles';
 
 const Header = ({ currentUser, signOutStart }) => {
@@ -27,18 +27,18 @@ const Header = ({ currentUser, signOutStart }) => {
       <LogoContainer to="/">
         <Logo className="logo" />
       </LogoContainer>
-      <LinksContainer>
-        <LinkOption to="/shop">SHOP</LinkOption>
-        <LinkOption to="/contact">CONTACT</LinkOption>
+      <OptionsContainer>
+        <OptionLink to="/shop">SHOP</OptionLink>
+        <OptionLink to="/shop">CONTACT</OptionLink>
         {currentUser ? (
-          <LinkOption as="div" to="/" onClick={() => signOutStart()}>
-            {currentUser.displayName} (SIGN OUT)
-          </LinkOption>
+          <OptionLink as="div" onClick={signOutStart}>
+            {currentUser.displayName} SIGN OUT
+          </OptionLink>
         ) : (
-          <LinkOption to="/signin">SIGN IN</LinkOption>
+          <OptionLink to="/signin">SIGN IN</OptionLink>
         )}
         <CartIcon />
-      </LinksContainer>
+      </OptionsContainer>
       {hidden ? null : <CartDropdown />}
     </HeaderContainer>
   );

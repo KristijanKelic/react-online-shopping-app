@@ -5,41 +5,47 @@ import { CartContext } from '../../providers/cart/cart.provider';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import StripeCheckoutButton from '../../components/stripe-button/stripe-button.component';
 
-import './checkout.styles.scss';
+import {
+  CheckoutPageContainer,
+  CheckoutHeaderContainer,
+  HeaderBlockContainer,
+  TotalContainer,
+  WarningContainer
+} from './checkout.styles';
 
 const Checkout = () => {
   const { cartItems, total } = useContext(CartContext);
   return (
-    <div className="checkout-page">
-      <div className="checkout-header">
-        <div className="header-block">
+    <CheckoutPageContainer>
+      <CheckoutHeaderContainer>
+        <HeaderBlockContainer>
           <span>Product</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Description</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Quantity</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Price</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Remove</span>
-        </div>
-      </div>
+        </HeaderBlockContainer>
+      </CheckoutHeaderContainer>
       {cartItems.map(cartItem => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <div className="total">
+      <TotalContainer>
         <span>TOTAL: ${total}</span>
-      </div>
+      </TotalContainer>
       <StripeCheckoutButton price={total} />
-      <h1 className="stripe-test-info">
+      <WarningContainer>
         This is test mode, please use the following
         <br /> CardNo: 4242 4242 4242 4242 | Exp: 01/20 | CVV: 123
-      </h1>
-    </div>
+      </WarningContainer>
+    </CheckoutPageContainer>
   );
 };
 
