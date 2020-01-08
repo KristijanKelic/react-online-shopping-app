@@ -47,3 +47,11 @@ Inside src/components/stripe-button replace public key with your own:
 ```
 const publishableKey = 'pk_test_mmfEVYMZ6pXcFNXmDxS5GMAx00OYdFOuZn';
 ```
+
+TO make backend stripe payment handling work create .env in root (next to README and gitignore) and add:
+
+```
+STRIPE_SECRET_KEY=~
+```
+
+Replace ~ with your secret key that you get from stripe.
