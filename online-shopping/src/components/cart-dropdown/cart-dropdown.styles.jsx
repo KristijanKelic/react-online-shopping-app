@@ -14,6 +14,10 @@ export const CartDropdownContainer = styled.div`
   right: 40px;
   z-index: 5;
 
+  @media screen and (max-width: 800px) {
+    right: 20px;
+}
+
   &:after {
     content: '';
     width: 0px;
@@ -25,6 +29,10 @@ export const CartDropdownContainer = styled.div`
     position: absolute;
     right: 30px;
     top: -20px;
+
+    @media screen and (max-width: 800px) {
+      right: 10px;
+  }
   }
 `;
 
