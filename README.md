@@ -14,6 +14,7 @@ Also review of:
 - redux-saga (async redux, replace for thunk)
 - React Hooks
 - Context API
+- React performance (lazy, suspense, memo, pure component, useCallback, useMemo)
 
 ## Firebase (<https://firebase.google.com/)>
 
