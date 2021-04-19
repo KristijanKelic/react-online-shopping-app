@@ -1,4 +1,4 @@
-# OnlineShoppingApp
+# online-shopping-app
 
 React practice.
 
