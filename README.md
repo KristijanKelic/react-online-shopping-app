@@ -27,7 +27,7 @@ Inside src/firebase/ create firebase.config.js file and export an object that lo
 const config = {
   apiKey: '~',
   authDomain: '~',
-  databaseURL: '~,
+  databaseURL: '~',
   projectId: '~',
   storageBucket: '~',
   messagingSenderId: '~',
